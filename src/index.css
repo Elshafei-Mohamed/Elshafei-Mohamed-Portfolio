@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll across the entire app */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 3D Container Styles */
+.three-container {
+  perspective: 1000px;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Optimized pulse animation for backgrounds */
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hover effects for interactive elements */
+a {
+  transition: color 0.3s ease, text-decoration 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  color: #0099ff;
+  text-decoration: none;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+img {
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  filter: brightness(1.1);
+}
+
+/* GPU acceleration for better performance */
+.three-container,
+canvas {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Respect user preference to reduce motion */
+@media (prefers-reduce-motion: reduce) {
+  a,
+  button,
+  img {
+    transition: none !important;
+  }
+  
+  .three-container,
+  canvas {
+    will-change: auto;
+  }
+}
