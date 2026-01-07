@@ -338,7 +338,7 @@ export const projects = [
     description:
       "A smart platform that converts PDF exams (text-based or scanned) into interactive electronic tests with automatic grading and AI-powered explanations.It supports both Arabic and English and gives users full control to review extracted content before starting the exam, ensuring accuracy and trust.",
     image: EduScan,
-    technologies: ["React", "Vite", "Tailwind", "Framer Motion", "API", "OpenRouter" "Typescript"],
+    technologies: ["React", "Vite", "Tailwind", "Framer Motion", "API", "OpenRouter", "Typescript"],
     // github: "https://github.com/Elshafei-Mohamed/skill-mirror-app",
     demo: "https://eduscan.netlify.app",
     featured: true,
@@ -386,5 +386,6 @@ export const cubeFaces = [
   { name: "Skills", color: "#00d9ff", section: "skills" },
   { name: "Contact", color: "#a78bfa", section: "contact" },
 ];
+
 
 
