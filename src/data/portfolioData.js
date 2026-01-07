@@ -14,7 +14,7 @@ import Company_Dashboard from "../assets/projects/Company_Dashboard.png";
 import Weather_Dashboard from "../assets/projects/Weather_Dashboard.jpg";
 import Prayer_Time from "../assets/projects/Prayer_Time.jpg";
 import Skill_Mirror_App from "../assets/projects/skill-mirror-app.png";
-import Skill_Mirror_App from "../assets/projects/EduScan.png";
+import EduScan from "../assets/projects/EduScan.png";
 import My_CV from "../assets/Elshafei_Mohamed_CV.pdf";
 
 // Icon imports
@@ -386,4 +386,5 @@ export const cubeFaces = [
   { name: "Skills", color: "#00d9ff", section: "skills" },
   { name: "Contact", color: "#a78bfa", section: "contact" },
 ];
+
 
