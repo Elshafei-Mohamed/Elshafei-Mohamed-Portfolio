@@ -14,6 +14,7 @@ import Company_Dashboard from "../assets/projects/Company_Dashboard.png";
 import Weather_Dashboard from "../assets/projects/Weather_Dashboard.jpg";
 import Prayer_Time from "../assets/projects/Prayer_Time.jpg";
 import Skill_Mirror_App from "../assets/projects/skill-mirror-app.png";
+import Skill_Mirror_App from "../assets/projects/EduScan.png";
 import My_CV from "../assets/Elshafei_Mohamed_CV.pdf";
 
 // Icon imports
@@ -331,6 +332,19 @@ export const projects = [
     unCompleted: true,
     Upgradable: false,
   },
+  {
+    id: 1,
+    title: "EduScan",
+    description:
+      "A smart platform that converts PDF exams (text-based or scanned) into interactive electronic tests with automatic grading and AI-powered explanations.It supports both Arabic and English and gives users full control to review extracted content before starting the exam, ensuring accuracy and trust.",
+    image: EduScan,
+    technologies: ["React", "Vite", "Tailwind", "Framer Motion", "API", "OpenRouter" "Typescript"],
+    // github: "https://github.com/Elshafei-Mohamed/skill-mirror-app",
+    demo: "https://eduscan.netlify.app",
+    featured: true,
+    unCompleted: false,
+    Upgradable: false,
+  },
 ];
 
 // ContactInfo
@@ -372,3 +386,4 @@ export const cubeFaces = [
   { name: "Skills", color: "#00d9ff", section: "skills" },
   { name: "Contact", color: "#a78bfa", section: "contact" },
 ];
+
