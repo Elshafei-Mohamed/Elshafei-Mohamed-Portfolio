@@ -343,7 +343,7 @@ export const projects = [
     demo: "https://eduscan.netlify.app",
     featured: true,
     unCompleted: false,
-    Upgradable: false,
+    Upgradable: true,
   },
 ];
 
@@ -386,6 +386,7 @@ export const cubeFaces = [
   { name: "Skills", color: "#00d9ff", section: "skills" },
   { name: "Contact", color: "#a78bfa", section: "contact" },
 ];
+
 
 
 
