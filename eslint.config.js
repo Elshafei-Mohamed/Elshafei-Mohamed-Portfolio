@@ -1,0 +1,43 @@
+import js from '@eslint/js'
+import globals from 'globals'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+
+export default [
+  { ignores: ['dist'] },
+  js.configs.recommended,
+  react.configs.flat.recommended,
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    settings: { react: { version: 'detect' } },
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react-refresh/only-export-components': 'warn',
+      'no-unused-vars': 'error',
+      'react/no-unknown-property': ['error', {
+        ignore: [
+          'args', 'wireframe', 'intensity', 'position', 'rotation',
+          'scale', 'color', 'attach', 'object', 'castShadow', 'receiveShadow',
+        ],
+      }],
+      'react/prop-types': 'off',
+    },
+  },
+]
