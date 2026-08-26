@@ -39,7 +39,7 @@ function Navigation() {
           className="font-semibold tracking-tight text-lg text-primary"
           aria-label="Elshafei, back to top"
         >
-          elshafei<span className="text-accent">.</span>
+          El_Shafei_1<span className="text-accent">.</span>
         </a>
 
         {/* Desktop */}
