@@ -1,98 +1,89 @@
-import React, { useMemo } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { personalInfo } from "../data/portfolioData";
-import { Code, Sparkles, Rocket } from "lucide-react";
 
-const About = () => {
-  const highlights = useMemo(() => [
-    { icon: Code, title: "Clean Code", description: "Writing maintainable and scalable solutions" },
-    { icon: Sparkles, title: "Creative Solutions", description: "Turning ideas into reality with innovation" },
-    { icon: Rocket, title: "Fast Delivery", description: "Delivering high-quality projects on time" },
-  ], []);
+const journey = [
+  {
+    step: "Started",
+    text: "Building websites with HTML, CSS, and JavaScript. Obsessed with how interfaces actually work.",
+  },
+  {
+    step: "Went deep",
+    text: "Specialized in React and modern frontend. Shipped client sites, dashboards, and interactive tools.",
+  },
+  {
+    step: "Now",
+    text: "Building complete products: features, APIs, data, and AI integrations. EduScan is the proof.",
+  },
+];
 
-  const viewportOnce = { once: true };
+function About() {
+  const { bio, principles, image } = personalInfo;
 
   return (
-    <section id="about" className="py-20 px-4 bg-[#0a0a0f] relative">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About{" "}
-            <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Me
-            </span>
-          </h2>
-          <div className="w-20 h-1 bg-linear-to-r from-cyan-400 to-purple-500 mx-auto"></div>
-        </motion.div>
+    <section id="about" className="bg-surface border-y border-line">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-14">
+          {/* Portrait */}
+          <div className="lg:col-span-4">
+            <img
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
+              className="rounded-[12px] w-full max-w-xs h-auto object-cover aspect-[4/5] border border-line"
+            />
+            <p className="mt-4 font-mono text-xs text-muted">{personalInfo.name}</p>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={viewportOnce}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="absolute inset-0 bg-linear-to-r from-cyan-500 to-purple-500 rounded-2xl blur-2xl opacity-30 pointer-events-none"></div>
-              <img
-                src={personalInfo.image}
-                alt={personalInfo.name}
-                loading="lazy"
-                decoding="async"
-                className="relative rounded-2xl w-full h-auto shadow-2xl border-2 border-white/10"
-              />
-            </div>
-          </motion.div>
+          {/* Narrative */}
+          <div className="lg:col-span-8">
+            <header>
+              <p className="font-mono text-xs uppercase tracking-widest text-accent mb-3">
+                03 / About
+              </p>
+              <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-primary">
+                From interfaces to products.
+              </h2>
+            </header>
 
-          {/* Content Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={viewportOnce}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <h3 className="text-3xl font-bold text-white">
-              I&apos;m a <span className="text-cyan-400">{personalInfo.title}</span>
-            </h3>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              {personalInfo.bio}
-            </p>
-
-            {/* Highlights */}
-            <div className="grid gap-4 pt-6">
-              {highlights.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={viewportOnce}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="flex items-start gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="p-3 bg-linear-to-br from-cyan-500 to-purple-500 rounded-lg">
-                    <item.icon size={24} className="text-white" />
+            {/* Journey */}
+            <ol role="list" className="mt-9">
+              {journey.map((item, i) => (
+                <li key={item.step} className="relative flex gap-5 pb-7 last:pb-0">
+                  <div className="flex flex-col items-center" aria-hidden="true">
+                    <span className="w-8 h-8 rounded-full border border-line-strong bg-raised flex items-center justify-center font-mono text-xs text-accent shrink-0">
+                      {i + 1}
+                    </span>
+                    {i < journey.length - 1 && <span className="w-px grow bg-line mt-1" />}
                   </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">{item.title}</h4>
-                    <p className="text-gray-400 text-sm">{item.description}</p>
+                  <div className="pt-1">
+                    <h3 className="font-semibold text-primary">{item.step}</h3>
+                    <p className="mt-1 text-secondary leading-relaxed max-w-[62ch]">{item.text}</p>
                   </div>
-                </motion.div>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-9 text-base text-secondary leading-relaxed max-w-[68ch]">{bio}</p>
+
+            {/* Principles */}
+            <div className="mt-10 grid sm:grid-cols-3 gap-4">
+              {principles.map((principle) => (
+                <div key={principle.title} className="rounded-[12px] border border-line bg-bg p-5">
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent">
+                    {principle.title}
+                  </p>
+                  <p className="mt-2.5 text-sm text-secondary leading-relaxed">{principle.text}</p>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default React.memo(About);

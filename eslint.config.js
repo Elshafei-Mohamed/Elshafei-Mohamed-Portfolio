@@ -35,6 +35,10 @@ export default [
         ignore: [
           'args', 'wireframe', 'intensity', 'position', 'rotation',
           'scale', 'color', 'attach', 'object', 'castShadow', 'receiveShadow',
+          'transparent', 'opacity', 'depthWrite', 'emissive', 'emissiveIntensity',
+          'metalness', 'roughness', 'side', 'sizeAttenuation', 'count', 'array',
+          'itemSize', 'normalized', 'frustumCulled', 'renderOrder', 'dispose',
+          'geometry', 'material', 'toneMapped', 'linewidth', 'linecap', 'linejoin',
         ],
       }],
       'react/prop-types': 'off',

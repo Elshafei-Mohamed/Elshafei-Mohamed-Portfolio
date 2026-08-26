@@ -9,9 +9,14 @@ dist/
 .env.local
 .env.*.local
 
-# Old unused images — kept for reference but not tracked
+# Internal documentation (README is the only public doc)
+*.md
+!README.md
+
+# Unused assets kept locally for reference
 src/assets/My-Image/myphoto.jpg
 src/assets/My-Image/myphoto2.jpg
+src/assets/projects/Tuscani.webp
 
 # OS files
 Thumbs.db

@@ -2,7 +2,6 @@ import myImage from "../assets/My-Image/myphoto3.webp";
 import Apexa from "../assets/projects/Apexa.webp";
 import Grill_House from "../assets/projects/Grill_House.webp";
 import Hyundai_Coupe from "../assets/projects/Hyundai_Coupe.webp";
-import Tuscani from "../assets/projects/Tuscani.webp";
 import Muscle_Factory from "../assets/projects/Muscle_Factory.webp";
 import Old_Portfolio_v1 from "../assets/projects/Old_Portfolio.webp";
 import Old_Portfolio_v2 from "../assets/projects/Old_Portfolio_v2.webp";
@@ -15,345 +14,347 @@ import Weather_Dashboard from "../assets/projects/Weather_Dashboard.webp";
 import Prayer_Time from "../assets/projects/Prayer_Time.webp";
 import Skill_Mirror_App from "../assets/projects/skill-mirror-app.webp";
 import EduScan from "../assets/projects/EduScan.webp";
-// import My_CV from "../assets/Elshafei_Mohamed_CV.pdf"; // PDF pending — download button disabled for now
 
-// Icon imports (from lucide-react — replaces heavy react-icons)
-import {
-  Code2,
-  FileCode,
-  FileJson,
-  Atom,
-  Globe,
-  Server,
-  Database,
-  Palette,
-  GitBranch,
-  PenTool,
-  Container,
-  Terminal,
-  Code,
-  Image,
-  Layers,
-  Pen,
-  Droplet,
-  Zap,
-  Share2,
-  Github,
-  Linkedin,
-  MessageCircle,
-  Instagram,
-  Route,
-  FileType,
-} from "lucide-react";
-
-// Icon mapping (lucide-react equivalents)
-export const iconComponents = {
-  Code2,
-  FileCode,
-  FileJson,
-  Atom,
-  Globe,
-  Server,
-  Database,
-  Palette,
-  GitBranch,
-  PenTool,
-  Container,
-  Terminal,
-  Code,
-  default: Code,
-  Image,
-  Layers,
-  Pen,
-  Droplet,
-  Zap,
-  Route,
-  FileType,
-  Share2,
-};
-
-// personalInfo
 export const personalInfo = {
   name: "Elshafei Mohamed",
   title: "Full Stack Developer",
-  tagline: "Building seamless digital experiences with modern technologies",
-  bio: "I'm a passionate Full Stack Developer with expertise in building scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions. When I'm not coding, you'll find me exploring new technologies or contributing to open-source projects.",
-  image: myImage,
-  resume: "", // PDF pending
-};
-
-// Skills
-export const skills = [
-  { name: "HTML", icon: Code2 },
-  { name: "CSS", icon: FileCode },
-  { name: "JavaScript", icon: FileJson },
-  { name: "Bootstrap", icon: Layers },
-  { name: "Tailwind CSS", icon: Palette },
-  { name: "Sass", icon: Droplet },
-  { name: "React", icon: Atom },
-  { name: "Vite", icon: Zap },
-  { name: "Node.js", icon: Server },
-  { name: "Express", icon: Server },
-  { name: "MongoDB", icon: Database },
-  { name: "Git", icon: GitBranch },
-  { name: "TypeScript", icon: FileCode },
-];
-
-// Projects
-export const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured online shopping platform with cart, payment integration, and admin dashboard.",
-    image: E_Commerce,
-    technologies: [
-      "React",
-      "Node.js",
-      "Vite",
-      "API",
-      "Tailwind CSS",
-      "Framer Motion",
-      "AOS",
-    ],
-    featured: true,
-    unCompleted: true,
-    upgradable: true,
-  },
-  {
-    id: 2,
-    title: "Prayer Time",
-    description:
-      "A tool to generate beautiful portfolio websites with customizable themes.",
-    image: Prayer_Time,
-    technologies: ["React", "Vite", "Tailwind", "API", "Framer Motion"],
-    featured: true,
-    unCompleted: true,
-    upgradable: true,
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description:
-      "A beautiful weather application with forecasts, maps, and location-based alerts.",
-    image: Weather_Dashboard,
-    technologies: ["HTML", "CSS", "JS", "OpenWeather API"],
-    featured: true,
-    unCompleted: true,
-    upgradable: true,
-  },
-  {
-    id: 4,
-    title: "Company Dashboard",
-    description:
-      "Analytics dashboard for social media management with insights and scheduling.",
-    image: Company_Dashboard,
-    technologies: ["React", "Node.js", "Redis", "D3.js"],
-    featured: true,
-    unCompleted: true,
-    upgradable: true,
-  },
-  {
-    id: 5,
-    title: "Blog Platform",
-    description:
-      "A modern blogging platform with markdown support, comments, and SEO optimization.",
-    image: Apexa,
-    technologies: ["HTML", "CSS", "JS", "Bootstrap", "My SQL"],
-    github: "https://github.com/Elshafei-Mohamed/Apexa",
-    demo: "https://apexa-beta.vercel.app/",
-    featured: true,
-    unCompleted: false,
-    upgradable: true,
-  },
-  {
-    id: 6,
-    title: "Website Builder",
-    description:
-      "A tool to generate beautiful portfolio websites with customizable themes.",
-    image: Website_Bilder,
-    technologies: ["HTML", "CSS", "JS", "Bootstrap", "Framer Motion"],
-    demo: "https://website-builder-pro-ten.vercel.app/",
-    featured: true,
-    unCompleted: true,
-    upgradable: false,
-  },
-  {
-    id: 7,
-    title: "Grill House Bakery",
-    description:
-      "A smart platform connecting bakeries with customers for fresh, daily delights.",
-    image: Grill_House,
-    technologies: ["React", "Vite", "Tailwind", "Framer Motion"],
-    github: "https://github.com/Elshafei-Mohamed/project6",
-    demo: "https://demo-project6.com",
-    featured: false,
-    unCompleted: false,
-    upgradable: false,
-  },
-
-  {
-    id: 8,
-    title: "Muscle Factory",
-    description:
-      "A smart gym platform helping users track progress and achieve fitness goals.",
-    image: Muscle_Factory,
-    technologies: ["HTML", "CSS", "JS", "Bootstrap"],
-    github: "https://github.com/Elshafei-Mohamed/Muscle-Factory",
-    demo: "https://muscle-factory-sand.vercel.app/",
-    featured: false,
-    unCompleted: false,
-    upgradable: false,
-  },
-
-  {
-    id: 9,
-    title: "Paw Store",
-    description:
-      "Premium pet supplies and toys to keep your furry friends happy.",
-    image: pawstore,
-    technologies: ["HTML", "CSS", "JS"],
-    github: "https://github.com/Elshafei-Mohamed/Pawstore",
-    demo: "https://pawstore-coral.vercel.app/",
-    featured: false,
-    unCompleted: false,
-    upgradable: false,
-  },
-
-  {
-    id: 10,
-    title: "My Old Portfolio V1",
-    description:
-      "An early-stage portfolio capturing my first steps into digital creation.",
-    image: Old_Portfolio_v1,
-    technologies: ["HTML", "CSS", "JS", "Bootstrap", "JQuery"],
-    github: "https://github.com/Elshafei-Mohamed/My-Portfolio",
-    demo: "https://elshafeimohamedportfolio.vercel.app/",
-    featured: true,
-    unCompleted: false,
-    upgradable: true,
-  },
-  {
-    id: 11,
-    title: "My Old Portfolio V2",
-    description:
-      "My second portfolio version reflecting growth, experiments, and design exploration",
-    image: Old_Portfolio_v2,
-    technologies: ["React", "Vite", "Tailwind", "Framer Motion"],
-    demo: "https://mynewportfolio-sepia.vercel.app/",
-    featured: true,
-    unCompleted: false,
-    upgradable: true,
-  },
-  {
-    id: 12,
-    title: "Task Management App",
-    description:
-      "A collaborative task management tool with real-time updates and team collaboration features.",
-    image: To_Do_List,
-    technologies: ["HTML", "CSS", "JS"],
-    github: "https://github.com/Elshafei-Mohamed/To-Do-List",
-    demo: "https://to-do-list-orcin-zeta.vercel.app/",
-    featured: false,
-    unCompleted: true,
-    upgradable: true,
-  },
-  {
-    id: 13,
-    title: "Hyundai Coupe Guide V1",
-    description:
-      "A complete car guide explaining features, performance, pricing, and smart buying tips.",
-    image: Tuscani,
-    technologies: ["HTML", "CSS", "JS"],
-    github: "https://github.com/Elshafei-Mohamed/Tuccani_2",
-    demo: "https://tuccani-2.vercel.app/",
-    featured: false,
-    unCompleted: false,
-    upgradable: false,
-  },
-  {
-    id: 14,
-    title: "Hyundai Coupe Guide V2",
-    description:
-      "A complete car guide explaining features, performance, pricing, and smart buying tips.",
-    image: Hyundai_Coupe,
-    technologies: ["HTML", "CSS", "JS", "Bootstrap"],
-    github: "https://github.com/Elshafei-Mohamed/Hyundai-Coupe",
-    demo: "https://hyundai-coupe.vercel.app/",
-    featured: true,
-    unCompleted: false,
-    upgradable: true,
-  },
-  {
-    id: 15,
-    title: "Skill Mirror App",
-    description:
-      "A simple tool that analyzes frontend code to find performance issues, bad practices, and AI-generated patterns.",
-    image: Skill_Mirror_App,
-    technologies: ["React", "Vite", "Tailwind", "Framer Motion", "Typescript"],
-    github: "https://github.com/Elshafei-Mohamed/skill-mirror-app",
-    demo: "https://skill-mirror-app.vercel.app",
-    featured: true,
-    unCompleted: true,
-    upgradable: false,
-  },
-  {
-    id: 16,
-    title: "EduScan",
-    description:
-      "A smart platform that converts PDF exams (text-based or scanned) into interactive electronic tests with automatic grading and AI-powered explanations.It supports both Arabic and English and gives users full control to review extracted content before starting the exam, ensuring accuracy and trust.",
-    image: EduScan,
-    technologies: [
-      "React",
-      "Vite",
-      "Tailwind",
-      "Framer Motion",
-      "API",
-      "OpenRouter",
-      "Typescript",
-    ],
-    demo: "https://eduscan.netlify.app",
-    featured: true,
-    unCompleted: false,
-    upgradable: true,
-  },
-];
-
-// ContactInfo
-export const contactInfo = {
-  email: "elshafeibusniss2005@gmail.com",
-  phone: "+20 155 440 7038",
-  location: "Al-Dakahlia , EG",
-  availability: "Available for freelance projects",
-
-  social: [
+  location: "Al-Dakahlia, Egypt",
+  tagline: "I build web products end to end. Designed, built, shipped.",
+  bio: "I started out building interfaces and went deep on React and modern frontend work. Along the way I kept hitting the same wall: a polished UI alone does not make a product. So I moved toward building complete applications, including features, APIs, data, and AI integrations. That shift produced EduScan, an AI-powered exam platform, and Skill Mirror, a code-review tool. What drives me is taking an idea from rough concept to something people can actually open and use.",
+  principles: [
     {
-      name: "GitHub",
-      url: "https://github.com/Elshafei-Mohamed",
-      icon: Github,
+      title: "Ship, then polish",
+      text: "Working software this week beats perfect software someday.",
     },
     {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/Elshafei-Mohamed",
-      icon: Linkedin,
+      title: "Honest scope",
+      text: "You will always know what is done, what is not, and what it costs.",
     },
     {
-      name: "WhatsApp",
-      url: "https://wa.me/qr/GOFC26QFS4QJH1",
-      icon: MessageCircle,
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/el_shafei_mohamed/#",
-      icon: Instagram,
+      title: "Products, not projects",
+      text: "Success is measured by whether anyone uses it, not by screenshots.",
     },
   ],
+  image: {
+    src: myImage,
+    alt: "Portrait of Elshafei Mohamed",
+    width: 800,
+    height: 1000,
+  },
 };
 
-// sections
-export const cubeFaces = [
-  { name: "About", color: "#0ea5e9", section: "about" },
-  { name: "Projects", color: "#8b5cf6", section: "projects" },
-  { name: "Skills", color: "#00d9ff", section: "skills" },
-  { name: "Contact", color: "#a78bfa", section: "contact" },
+export const projects = [
+  /* ── Featured ─────────────────────────────────────────────── */
+  {
+    id: "eduscan",
+    showInHero: true,
+    title: "EduScan",
+    summary: "AI-powered exam platform",
+    description:
+      "Turns PDF exams, text-based or scanned, into interactive electronic tests with automatic grading and AI-generated explanations. Supports Arabic and English, and lets users review extracted content before starting so nothing is graded blindly.",
+    image: {
+      src: EduScan,
+      alt: "EduScan interface converting a PDF exam into an interactive test",
+      width: 1280,
+      height: 720,
+    },
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "OpenRouter API",
+    ],
+    demo: "https://eduscan.netlify.app",
+    tier: "featured",
+  },
+  {
+    id: "skill-mirror",
+    showInHero: true,
+    title: "Skill Mirror",
+    summary: "Code-quality analyzer",
+    description:
+      "A review tool that analyzes frontend code for performance issues, bad practices, and AI-generated patterns. Built for developers who want honest feedback on their own work.",
+    image: {
+      src: Skill_Mirror_App,
+      alt: "Skill Mirror app analyzing frontend code quality",
+      width: 1280,
+      height: 720,
+    },
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    demo: "https://skill-mirror-app.vercel.app",
+    tier: "featured",
+  },
+  {
+    id: "website-builder",
+    showInHero: false,
+    title: "Website Builder",
+    summary: "Portfolio generator",
+    description:
+      "A tool that generates portfolio websites with customizable themes, so anyone can publish a clean personal site without writing code.",
+    image: {
+      src: Website_Bilder,
+      alt: "Website Builder theme customization interface",
+      width: 1280,
+      height: 720,
+    },
+    technologies: ["JavaScript", "HTML", "CSS", "Bootstrap"],
+    demo: "https://website-builder-pro-ten.vercel.app/",
+    tier: "featured",
+  },
+  {
+    id: "apexa",
+    showInHero: false,
+    title: "Apexa",
+    summary: "Blogging platform",
+    description:
+      "A blogging platform with markdown support, comments, and SEO-friendly page structure.",
+    image: {
+      src: Apexa,
+      alt: "Apexa blog platform homepage",
+      width: 1280,
+      height: 720,
+    },
+    technologies: ["JavaScript", "Bootstrap", "MySQL"],
+    github: "https://github.com/Elshafei-Mohamed/Apexa",
+    demo: "https://apexa-beta.vercel.app/",
+    tier: "featured",
+  },
+
+  /* ── Future ─────────────────────────────────────────────────
+     Reserved for upcoming .NET / Flutter / full-stack builds:
+
+     {
+       id: "dotnet-product",
+       title: "My .NET Product",
+       summary: "Full-stack SaaS",
+       description: "...",
+       image: { src: shot, alt: "...", width: 1280, height: 720 },
+       technologies: ["React", "ASP.NET Core", "SQL Server"],
+       demo: "https://...",
+       tier: "future",
+     },
+  ----------------------------------------------------------- */
+
+  /* ── Earlier ──────────────────────────────────────────────── */
+  {
+    id: "grill-house",
+    showInHero: false,
+    title: "Grill House Bakery",
+    summary: "Bakery storefront",
+    description:
+      "A bakery platform with product browsing and a responsive storefront.",
+    image: {
+      src: Grill_House,
+      alt: "Grill House Bakery storefront",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["React", "Vite", "Tailwind CSS"],
+    tier: "earlier",
+  },
+  {
+    id: "e-commerce",
+    showInHero: false,
+    title: "E-Commerce Platform",
+    summary: "In progress",
+    description:
+      "An online shopping concept exploring cart, checkout, and product UI.",
+    image: {
+      src: E_Commerce,
+      alt: "E-commerce platform product page",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["React", "Vite", "Tailwind CSS"],
+    tier: "earlier",
+  },
+  {
+    id: "company-dashboard",
+    showInHero: false,
+    title: "Company Dashboard",
+    summary: "Analytics UI concept",
+    description: "An analytics dashboard concept for social media management.",
+    image: {
+      src: Company_Dashboard,
+      alt: "Company dashboard analytics view",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["React", "Node.js"],
+    tier: "earlier",
+  },
+  {
+    id: "prayer-time",
+    showInHero: true,
+    title: "Prayer Time",
+    summary: "Prayer-times app",
+    description:
+      "A prayer-times app with a clean interface, powered by live API data.",
+    image: {
+      src: Prayer_Time,
+      alt: "Prayer Time app interface",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["React", "Vite", "API"],
+    tier: "earlier",
+  },
+  {
+    id: "weather-dashboard",
+    showInHero: true,
+    title: "Weather Dashboard",
+    summary: "Forecast app",
+    description:
+      "Current conditions, forecasts, and location search using the OpenWeather API.",
+    image: {
+      src: Weather_Dashboard,
+      alt: "Weather dashboard forecast view",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["JavaScript", "OpenWeather API"],
+    tier: "earlier",
+  },
+  {
+    id: "muscle-factory",
+    showInHero: false,
+    title: "Muscle Factory",
+    summary: "Gym platform",
+    description:
+      "A gym platform helping users browse programs and track fitness goals.",
+    image: {
+      src: Muscle_Factory,
+      alt: "Muscle Factory gym platform",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["JavaScript", "Bootstrap"],
+    github: "https://github.com/Elshafei-Mohamed/Muscle-Factory",
+    demo: "https://muscle-factory-sand.vercel.app/",
+    tier: "earlier",
+  },
+  {
+    id: "paw-store",
+    showInHero: false,
+    title: "Paw Store",
+    summary: "Pet supplies storefront",
+    description: "An e-commerce style storefront for pet supplies and toys.",
+    image: {
+      src: pawstore,
+      alt: "Paw Store pet supplies storefront",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["JavaScript"],
+    github: "https://github.com/Elshafei-Mohamed/Pawstore",
+    demo: "https://pawstore-coral.vercel.app/",
+    tier: "earlier",
+  },
+  {
+    id: "task-manager",
+    showInHero: false,
+    title: "Task Management App",
+    summary: "Productivity tool",
+    description:
+      "A task manager for organizing daily work with local persistence.",
+    image: {
+      src: To_Do_List,
+      alt: "Task management app interface",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["JavaScript"],
+    github: "https://github.com/Elshafei-Mohamed/To-Do-List",
+    demo: "https://to-do-list-orcin-zeta.vercel.app/",
+    tier: "earlier",
+  },
+  {
+    id: "hyundai-coupe",
+    showInHero: false,
+    title: "Hyundai Coupe Guide",
+    summary: "Car guide site",
+    description:
+      "Features, performance, and specs of the Hyundai Coupe in an easy-to-browse format.",
+    image: {
+      src: Hyundai_Coupe,
+      alt: "Hyundai Coupe guide website",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["JavaScript", "Bootstrap"],
+    github: "https://github.com/Elshafei-Mohamed/Hyundai-Coupe",
+    demo: "https://hyundai-coupe.vercel.app/",
+    tier: "earlier",
+  },
+  {
+    id: "portfolio-v2",
+    showInHero: true,
+    title: "Portfolio V2",
+    summary: "Previous portfolio",
+    description:
+      "The second iteration of my portfolio, exploring React and motion design.",
+    image: {
+      src: Old_Portfolio_v2,
+      alt: "Second portfolio version",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["React", "Tailwind CSS"],
+    demo: "https://mynewportfolio-sepia.vercel.app/",
+    // tier: "earlier",
+  },
+  {
+    id: "portfolio-v1",
+    showInHero: false,
+    title: "Portfolio V1",
+    summary: "First portfolio",
+    description: "Where the journey into web development started.",
+    image: {
+      src: Old_Portfolio_v1,
+      alt: "First portfolio version",
+      width: 640,
+      height: 360,
+    },
+    technologies: ["HTML", "CSS", "jQuery"],
+    demo: "https://elshafeimohamedportfolio.vercel.app/",
+    tier: "earlier",
+  },
 ];
+
+export const featuredProjects = projects.filter((p) => p.tier === "featured");
+export const moreProjects = projects.filter((p) => p.tier === "more");
+export const futureProjects = projects.filter((p) => p.tier === "future");
+export const earlierProjects = projects.filter((p) => p.tier === "earlier");
+export const heroProjects = projects.filter((p) => p.showInHero);
+
+export const skillLayers = [
+  {
+    label: "Interface",
+    note: "What users see and touch",
+    items: ["React", "TypeScript", "JavaScript", "HTML & CSS", "Tailwind CSS"],
+  },
+  {
+    label: "Application",
+    note: "Logic, APIs, server behavior",
+    items: ["Node.js", "Express", "REST APIs"],
+  },
+  {
+    label: "Data",
+    note: "Storage, queries, modeling",
+    items: ["MongoDB", "MySQL"],
+  },
+  {
+    label: "Engineering",
+    note: "Build tooling, workflow, shipping",
+    items: ["Git", "Vite", "Framer Motion", "Vercel / Netlify"],
+  },
+];
+
+/* ── Contact ──────────────────────────────────────────────────── */
+export const contactInfo = {
+  email: "elshafeibusniss2005@gmail.com",
+  whatsapp: "https://wa.me/qr/GOFC26QFS4QJH1",
+  location: "Al-Dakahlia, Egypt",
+  availability: "Available for freelance projects",
+};
