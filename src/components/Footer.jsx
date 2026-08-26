@@ -13,9 +13,11 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8">
           <div>
-            <p className="text-lg font-semibold tracking-tight text-primary">
-              El_Shafei_1<span className="text-accent">.</span>
-            </p>
+            <p
+         className="text-lg font-semibold tracking-tight text-primary"
+        >
+          El<span className="text-accent">_</span>Shafei<span className="text-accent">_</span>1
+        </p>
             <p className="mt-2 max-w-xs text-sm text-secondary">
               {personalInfo.tagline}
             </p>
