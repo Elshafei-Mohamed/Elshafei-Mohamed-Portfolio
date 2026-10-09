@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { heroProjects } from "../data/portfolioData";
+import VisitCounter from "./VisitCounter";
 
 /** Data-driven index of the hero-selected work, styled as an editor window. */
 const ProjectIndexCard = () => {
@@ -133,6 +134,10 @@ const Hero = () => {
             <ProjectIndexCard />
           </div>
         </div>
+
+        {/* Real total visit count, in the gap before the work section.
+            Renders only when the count is available. */}
+        <VisitCounter />
       </div>
     </section>
   );

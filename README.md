@@ -17,6 +17,8 @@ large project showcases, and a compact archive of earlier work.
   `showInHero` flag that controls what appears in the hero card
 - Skills presented as connected layers of a product stack (Interface → Application → Data → Engineering)
 - Working contact form (EmailJS) with spam honeypot
+- Real total visit counter (GoatCounter) in the hero — every page load counts,
+  refreshes and repeat visits included
 - Self-hosted variable fonts (Inter + JetBrains Mono), zero WebGL, no animation libraries
 - Responsive from 375px to desktop, keyboard-accessible, honors `prefers-reduced-motion`
 
@@ -29,6 +31,7 @@ large project showcases, and a compact archive of earlier work.
 | Fonts      | Inter Variable, JetBrains Mono Variable (self-hosted via Fontsource) |
 | Icons      | lucide-react                                 |
 | Form       | EmailJS                                      |
+| Analytics  | GoatCounter                                  |
 | Hosting    | Vercel                                       |
 
 ## Getting Started
@@ -55,6 +58,12 @@ The contact form needs three environment variables in a local `.env.local`
 VITE_EMAILJS_SERVICE_ID=...
 VITE_EMAILJS_TEMPLATE_ID=...
 VITE_EMAILJS_PUBLIC_KEY=...
+```
+
+The visit counter needs one more (see `.env.example`):
+
+```
+VITE_GOATCOUNTER_SITE=...
 ```
 
 ## How This Portfolio Was Built
@@ -90,6 +99,30 @@ VITE_EMAILJS_PUBLIC_KEY=...
 - **Add a skill layer or item:** edit `skillLayers` in the same file.
 - **Replace the CV:** overwrite `public/Elshafei-Mohamed-CV.pdf`.
 - **Change the look:** adjust the tokens at the top of `src/index.css`.
+
+## Visitor counter
+
+The hero shows a real total visit count, powered by
+[GoatCounter](https://www.goatcounter.com) (free, cookieless, no personal
+data stored).
+
+- **What counts:** every full page load, including refreshes and repeat
+  visits. In-page anchor links (Work, Skills, …) do not count: the tracking
+  script fires once per document load, and `no_session` disables
+  GoatCounter's default reload deduplication.
+- **Where the number comes from:** the tracking script posts page views to
+  `https://<site>.goatcounter.com/count`; the hero reads the site-wide total
+  from the public `https://<site>.goatcounter.com/counter/TOTAL.json`
+  endpoint. That endpoint caches responses for up to 4 hours, so the
+  displayed count can lag behind reality by up to 4 hours.
+- **Setup:** create a free site at goatcounter.com and set
+  `VITE_GOATCOUNTER_SITE` to its site code, locally and in your hosting
+  provider's environment settings. In the GoatCounter dashboard, enable the
+  visitor-counter setting — until it is enabled the count endpoint returns
+  403 ("Need to enable the 'allow using the visitor counter' setting") and
+  the hero simply hides the counter.
+
+Dev servers and local previews never send page views.
 
 ## Contact
 
