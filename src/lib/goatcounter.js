@@ -1,5 +1,5 @@
 /**
- * GoatCounter integration (page-view counting + public total).
+ * GoatCounter integration (page-view counting + public counter).
  *
  * Recording: the official count.js script registers exactly one page view per
  * document load. GoatCounter only counts on load — it does not hook SPA or
@@ -10,11 +10,17 @@
  * same browser for up to 8 hours).
  *
  * Reading: the public counter endpoint
- * `https://<site>.goatcounter.com/counter/TOTAL.json` returns the site-wide
- * total as JSON. It sends `Access-Control-Allow-Origin: *` and is cached
- * server-side for up to 4 hours. It requires the site owner to enable
- * "Allow using the visitor counter" in the GoatCounter dashboard; until then
- * it responds 403 and this module reports the total as unavailable.
+ * `https://<site>.goatcounter.com/counter/<path>.json` returns the visit count
+ * for a single path as JSON. Every page load on this single-page site is
+ * counted under "/" (see `countPath`), which is exactly the population the
+ * hero card is meant to show. The endpoint sends
+ * `Access-Control-Allow-Origin: *`. Responses are cached server-side for up to
+ * four hours and the cache is keyed per path, so a brand-new pageview can take
+ * up to four hours to appear. A path with no recorded hits responds 404, which
+ * this module reports as unavailable rather than as a real zero. The counter
+ * requires the site owner to enable "Allow using the visitor counter" in the
+ * GoatCounter dashboard; until then it responds 403 and this module reports the
+ * count as unavailable.
  *
  * The site code is public by design — it appears in the tracking script URL
  * that every visitor's browser loads. No private API token or credential is
@@ -60,21 +66,43 @@ export function initGoatCounter() {
 }
 
 /**
- * Fetch the site-wide total visit count. Returns a formatted string
- * ("12,345"), or null when the counter is unavailable (not configured,
- * request failure, empty/malformed payload, or the visitor-counter setting
- * disabled on the GoatCounter site).
+ * The path GoatCounter records for the current document. Mirrors count.js's
+ * `get_path()`: use the canonical URL when it points at the same host,
+ * otherwise the current location. For this SPA every page view maps to "/".
+ */
+function countPath() {
+  try {
+    const canonical = document.querySelector('link[rel="canonical"][href]');
+    if (canonical) {
+      const url = new URL(canonical.href, window.location.href);
+      const stripWww = (host) => host.replace(/^www\./, "");
+      if (stripWww(url.hostname) === stripWww(window.location.hostname)) {
+        return url.pathname + url.search || "/";
+      }
+    }
+  } catch {
+    // Fall through to the current location.
+  }
+  return window.location.pathname + window.location.search || "/";
+}
+
+/**
+ * Fetch the visit count for the current page. Returns a formatted string
+ * ("12,345"), or null when the count is unavailable (not configured, request
+ * failure, empty/malformed payload, or the visitor-counter setting disabled on
+ * the GoatCounter site).
  *
  * A missing/empty/non-numeric `count` is reported as unavailable — it is
  * never coerced to 0, so an error page or truncated payload can never be
  * mistaken for a real zero.
  */
-export async function fetchTotalVisits() {
+export async function fetchVisitCount() {
   if (!SITE) return null;
 
   try {
+    const path = encodeURIComponent(countPath());
     const res = await fetch(
-      `https://${SITE}.goatcounter.com/counter/TOTAL.json`,
+      `https://${SITE}.goatcounter.com/counter/${path}.json`,
     );
     if (!res.ok) return null;
 

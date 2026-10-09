@@ -136,7 +136,7 @@ const Hero = () => {
         </div>
 
         {/* Real total visit count, in the gap before the work section.
-            Renders only when the count is available. */}
+            The card always renders; the number shows "—" when unavailable. */}
         <VisitCounter />
       </div>
     </section>
